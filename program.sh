@@ -26,7 +26,7 @@ elif [ "$option" == "Remove all package" ]
 then
     gum spin --title="Cleaning Cache . ." sleep 2
     echo "pacman -Scc"
-else
+else 
     echo "Skipped"
 fi
 echo ""
