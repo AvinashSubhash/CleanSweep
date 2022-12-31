@@ -119,7 +119,7 @@ then
         gum spin --title="Setting log size . ." sleep 2
 
     else
-        echo -e "Step Cancelle\n"
+        echo -e "Step Cancelled\n"
     fi
 
 else
