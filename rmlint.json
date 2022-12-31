@@ -2,45 +2,19 @@
 {
   "description": "rmlint json-dump of lint files",
   "cwd": "/home/kingaiva/github/CleanSweep/",
-  "args": "rmlint /home/kingaiva",
+  "args": "rmlint",
   "version": "2.10.1",
   "rev": "unknown",
   "progress": 0,
   "checksum_type": "blake2b",
   "merge_directories": false
 }, {
-  "id": 1066207999,
-  "type": "duplicate_file",
-  "progress": 29,
-  "checksum": "ca6914d2e33b83f2b2c66e4e625bc1d08674fae605008a215165d3c3a997d7d92945905207a539a7327be0f2728fa9aee005da9641407e5f3e4ef55b446b470a",
-  "path": "/home/kingaiva/github/Codechef-problems/codechef-march-3.py",
-  "size": 1,
-  "depth": 3,
-  "inode": 527353,
-  "disk_id": 66307,
-  "is_original": true,
-  "twins": 2,
-  "mtime": 1672157374.125375
-}, {
-  "id": 3690303502,
-  "type": "duplicate_file",
-  "progress": 29,
-  "checksum": "ca6914d2e33b83f2b2c66e4e625bc1d08674fae605008a215165d3c3a997d7d92945905207a539a7327be0f2728fa9aee005da9641407e5f3e4ef55b446b470a",
-  "path": "/home/kingaiva/warp-status.txt",
-  "size": 1,
-  "depth": 1,
-  "inode": 262244,
-  "disk_id": 66307,
-  "is_original": false,
-  "twins": 2,
-  "mtime": 1672478987.1768467
-}, {
   "aborted": false,
   "progress": 100,
-  "total_files": 3966,
-  "ignored_files": 82,
-  "ignored_folders": 39,
-  "duplicates": 1,
-  "duplicate_sets": 1,
-  "total_lint_size": 1
+  "total_files": 4,
+  "ignored_files": 1,
+  "ignored_folders": 1,
+  "duplicates": 0,
+  "duplicate_sets": 0,
+  "total_lint_size": 0
 }]
