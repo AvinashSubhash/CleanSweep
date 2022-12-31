@@ -31,6 +31,6 @@ fi
 
 sudo mv program.sh.x /usr/bin/cleansweep
 sudo chmod 777 /usr/bin/cleansweep 
-clear
+#clear
 echo -e "\n ${COL_GREEN}Installation Successfull!${COL_RESET}"
 echo -e "Command to use CleanSweap : ${COL_YELLOW}cleansweep${COL_RESET}\n"
