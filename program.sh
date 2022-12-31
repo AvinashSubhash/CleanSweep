@@ -91,7 +91,7 @@ if [ "$option" == "Remove duplicate files" ]
 then
     rmlint /home/$USER
     echo ""
-    sudo chmod 777 rmlint.sh
+    sudo chmod 740 rmlint.sh
     yes | sudo sh rmlint.sh -c
     echo ""
     gum spin --title="Removind duplicates . ." sleep 2
