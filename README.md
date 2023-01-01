@@ -12,7 +12,7 @@ CleanSweep is a TUI program that helps newbie Arch Linux users to cleanup their 
 
 1. Open the terminal in the CleanSweep directory and give execution permission to the install.sh file by running the command 
 ```
-sudo chmod 777 install.sh
+sudo chmod 740 install.sh
 ```
 
 2. Run the installer by the following command
