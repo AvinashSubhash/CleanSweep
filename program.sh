@@ -14,19 +14,6 @@ then
     clear
 fi
 
-if [ $(rmlint) ]
-then
-    echo ""
-else
-    yes | sudo pacman -S rmlint
-    clear
-fi
-
-
-
-
-
-
 echo -e "${COL_BLUE}Welcome to CleanSweep!${COL_RESET}"
 echo ""
 echo -e "${COL_YELLOW}Stage 1: Cleaning package manager's Cache${COL_RESET}"

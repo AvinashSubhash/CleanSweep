@@ -6,31 +6,49 @@ COL_GREEN='\033[0;32m'
 COL_YELLOW='\033[0;33m'
 COL_RESET='\033[0m'
 
-if [ "$(id -u)" -ne "0" ]
-then
-    echo -e "${COL_YELLOW}Sudo permission required! (It's Safe)${COL_RESET}\n"
-    sudo ls
-    clear
-fi
 
-if [ $(rmlint) ]
+clear
+
+if [  ! -d "/home/$USER/.cleansweep" ]
 then
-    echo ""
+
+    if [ "$(id -u)" -ne "0" ]
+    then
+        echo -e "${COL_YELLOW}Sudo permission required! (It's Safe)${COL_RESET}\n"
+        sudo ls
+        clear
+    fi
+
+    if ! [ $(rmlint) ]
+    then
+        yes | sudo pacman -S rmlint
+        clear
+    fi
+
+    if ! [ $(gum) ]
+    then
+        yes | sudo pacman -S gum
+        clear
+    fi
+
+    if ! [ $(shc) ]
+    then
+        yes | yay -S shc
+    fi
+    #echo "Hello"
+    shc -f program.sh
+    mkdir /home/$USER/.cleansweep/
+    cp program.sh.x /home/$USER/.cleansweep/cleansweep
+    chmod 740 /home/$USER/.cleansweep/cleansweep
+    export PATH=$PATH:/home/$USER/.cleansweep
+    echo "PATH=\$PATH:/home/$USER/.cleansweep" >> /home/$USER/.bashrc
+    clear
+    echo -e "\n ${COL_GREEN}Installation Successfull!${COL_RESET}"
+    echo -e "Command to use CleanSweap : ${COL_YELLOW}cleansweep${COL_RESET}\n"
+
 else
-    yes | sudo pacman -S rmlint
-    clear
-fi
+    echo -e "\n ${COL_RED}Installation Error!${COL_RESET}"
 
-if [ $(gum) ]
-then
-    echo ""
-else
-    yes | sudo pacman -S gum
-    clear
 fi
-
-sudo mv program.sh.x /usr/bin/cleansweep
-sudo chmod 740 /usr/bin/cleansweep 
 #clear
-echo -e "\n ${COL_GREEN}Installation Successfull!${COL_RESET}"
-echo -e "Command to use CleanSweap : ${COL_YELLOW}cleansweep${COL_RESET}\n"
+
