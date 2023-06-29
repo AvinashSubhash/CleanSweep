@@ -45,7 +45,7 @@ fi
     mkdir /home/$USER/.cleansweep/
     cp program.sh.x /home/$USER/.cleansweep/cleansweep
     chmod 740 /home/$USER/.cleansweep/cleansweep
-    if ! grep -Fxq "PATH=\$PATH:/home/$USER/.bugtracker-files/bugtracker-cli/" /home/$USER/.bashrc
+    if ! grep -Fxq "PATH=\$PATH:/home/$USER/.cleansweep" /home/$USER/.bashrc
     then
         export PATH=$PATH:/home/$USER/.cleansweep
         echo "PATH=\$PATH:/home/$USER/.cleansweep" >> /home/$USER/.bashrc
