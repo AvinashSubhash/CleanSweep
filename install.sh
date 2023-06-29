@@ -9,8 +9,10 @@ COL_RESET='\033[0m'
 
 clear
 
-if [  ! -d "/home/$USER/.cleansweep" ]
+if [  -d "/home/$USER/.cleansweep" ]
 then
+    rm -R /home/$USER/.cleansweep
+fi
 
     if [ "$(id -u)" -ne "0" ]
     then
@@ -22,33 +24,34 @@ then
     if ! [ $(rmlint) ]
     then
         yes | sudo pacman -S rmlint
-        clear
+#        clear
     fi
 
     if ! [ $(gum) ]
     then
         yes | sudo pacman -S gum
-        clear
+#        clear
     fi
 
-    if ! [ $(shc) ]
+    if ! shc -C 2>/dev/null
     then
-        yes | yay -S shc
+        git clone https://aur.archlinux.org/shc.git
+        cd shc
+        makepkg -si
+        cd ..
     fi
     #echo "Hello"
-    shc -f program.sh
+    sudo shc -f program.sh
     mkdir /home/$USER/.cleansweep/
     cp program.sh.x /home/$USER/.cleansweep/cleansweep
     chmod 740 /home/$USER/.cleansweep/cleansweep
-    export PATH=$PATH:/home/$USER/.cleansweep
-    echo "PATH=\$PATH:/home/$USER/.cleansweep" >> /home/$USER/.bashrc
+    if ! grep -Fxq "PATH=\$PATH:/home/$USER/.bugtracker-files/bugtracker-cli/" /home/$USER/.bashrc
+    then
+        export PATH=$PATH:/home/$USER/.cleansweep
+        echo "PATH=\$PATH:/home/$USER/.cleansweep" >> /home/$USER/.bashrc
+    fi
     clear
     echo -e "\n ${COL_GREEN}Installation Successfull!${COL_RESET}"
     echo -e "Command to use CleanSweap : ${COL_YELLOW}cleansweep${COL_RESET}\n"
-
-else
-    echo -e "\n ${COL_RED}Installation Error!${COL_RESET}"
-
-fi
 #clear
 
